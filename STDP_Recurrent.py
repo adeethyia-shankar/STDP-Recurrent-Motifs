@@ -1275,8 +1275,8 @@ def analyze_stdp(state, save_fig_dir: str='Figures'):
         plt.close(fig)
 
 def main(N: int, run_length: int):
-    setup = setup_stdp(N, run_length)
-    sim_state = run_stdp(setup=setup)
+    setup = setup_stdp(N=N)
+    sim_state = run_stdp(setup=setup, run_length=run_length)
     os.makedirs('States', exist_ok=True)
     with open(os.path.join('States', f'sim_state_{N}_{run_length}.pkl'), 'wb') as file:
         pickle.dump(sim_state, file)
