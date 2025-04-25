@@ -651,7 +651,7 @@ def setup_stdp(N: int = 500, p_E: float = 0.8, connect_type: int = 2):
     
     return setup_dict
 
-def run_stdp(setup, run_length=10.0, dt=0.0005, L_analysis=5.0, w_distr_prctile=99, f_seed_act=0):
+def run_stdp(setup, run_length, dt=0.0005, L_analysis=5.0, w_distr_prctile=99, f_seed_act=0):
     """
     Continues an STDP simulation by modifying a deep copy of the provided setup dictionary.
     
@@ -1275,7 +1275,7 @@ def analyze_stdp(state, save_fig_dir: str='Figures'):
         plt.close(fig)
 
 def main(N: int, run_length: int):
-    setup = setup_stdp(N)
+    setup = setup_stdp(N, run_length)
     sim_state = run_stdp(setup=setup)
     os.makedirs('States', exist_ok=True)
     with open(os.path.join('States', f'sim_state_{N}_{run_length}.pkl'), 'wb') as file:
