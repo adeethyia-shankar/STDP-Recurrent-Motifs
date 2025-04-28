@@ -854,8 +854,8 @@ def run_stdp(setup, run_length, dt=0.0005, L_analysis=5.0, w_distr_prctile=99, f
         if abs(((T_prev + t) * dt) % 1) < 1e-10:
             w_EE = np.clip(w_EE, 0, wEEmax) # Clip weights
         if abs(((T_prev + t) * dt) % 10) < 1e-10:
-            with open('../stdp_time_counter', 'a'):
-                print(f"{(T_prev + t)*dt:.1f} sec") # Print biological time
+            with open('../stdp_time_counter', 'a') as file:
+                file.write(f"{(T_prev + t)*dt:.1f} sec\n") # Print biological time
     
     total_time += run_length
 
