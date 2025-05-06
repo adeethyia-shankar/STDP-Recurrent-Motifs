@@ -2,5 +2,4 @@ brian2
 numpy
 matplotlib
 scipy
-networkx
 argparse
