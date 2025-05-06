@@ -16,4 +16,4 @@ python Brian2-STDP.py --neurons <number of neurons> --run_length <simulation tim
 ```
 
 ## Results
-[![STDP results](STDP_results_200_10.png)](STDP_results_200_10.pdf)
+[![STDP results](STDP_results_5000_2000.png)](STDP_results_5000_2000.pdf)
