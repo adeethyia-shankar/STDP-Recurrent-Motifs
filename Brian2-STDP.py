@@ -72,7 +72,7 @@ ax[0, 1].plot(state_mon.t/second, state_mon.w.T/gmax,
 ax[0, 1].set_xlabel('Time (s)')
 ax[0, 1].set_ylabel('Weight / gmax')
 ax[0, 1].set_title(f'Weights of {len(record_from)} neurons')
-ax[0, 1].legend(loc='lower right')
+ax[0, 1].legend(loc='best')
 
 # Population firing rate
 spike_counts = np.bincount(spike_mon.i, minlength=N)
