@@ -7,8 +7,10 @@ parser.add_argument('-n', '--neurons', type=int, required=True,
                     help='Number of neurons')
 parser.add_argument('-t', '--run_length', type=int, required=True,
                     help='Run length in seconds')
-N, run_length = parser.parse_args()
+args = parser.parse_args()
 
+N = args.neurons
+run_length = args.run_length
 sim_duration = run_length * second
 tau_m = 10 * ms
 tau_pre = 20 * ms
@@ -127,5 +129,8 @@ ax[1, 3].set_xlabel('CV of ISI')
 ax[1, 3].set_ylabel('Number of neurons')
 ax[1, 3].set_title('CV Distribution')
 
-fig.savefig('STDP_results.pdf')
+fig.suptitle(f'STDP on {N} neurons over {run_length} seconds', fontsize=18)
+fig.tight_layout()
+for ext in ['png', 'pdf']:
+  fig.savefig(f'STDP_results_{N}_{run_length}.{ext}')
 plt.close(fig)
